@@ -13,6 +13,7 @@ Ensure pip and pipenv are installed
 -----------------------------------
 
 ``$ pip3 install --user pipenv``
+
 ``$ pipenv --python $(which python3)``
 
 Clone repository
@@ -65,8 +66,13 @@ Manual Testing
 ==============
 
 ``(pgbackup) ➜  pgbackup git:(main) ✗ PYTHONPATH=./src python3``
+
 ``>>> from pgbackup import pgdump``
+
 ``>>> proc = pgdump.dump('postgres://user:password@localhost:5432/sample')``
+
 ``>>> f = open('./db/dump.sql', 'wb')``
+
 ``>>> f.write(proc.stdout.read())``
+
 ``>>> f.close()``
