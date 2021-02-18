@@ -17,13 +17,17 @@ git clone git@github.com:example/pgbackup && cd pgbackup
 ```
 
 ### Fetch development dependencies
-``make install``
+```
+make install
+```
 
+Rather than creating a requirements.txt file, pipenv has created a Pipfile that it will use to store virtualenv and dependency information. To activate our new virtualenv, we use this command
 ### Activate virtualenv:
-``pipenv shell``
+```
+pipenv shell
+```
 
-Rather than creating a requirements.txt file for us, pipenv has created a Pipfile that it will use to store virtualenv and dependency information. To activate our new virtualenv, we use the command pipenv shell, and to deactivate it we use exit instead of deactivate.
-
+and to deactivate it we use ``exit`` instead of deactivate.
 
 ## Usage
 
@@ -43,7 +47,7 @@ $ pgbackup postgres://bob@example.com:5432/db_one --driver local /var/local/db_o
 
 Run tests locally using make if virtualenv is active:
 ```
-$ make
+$ make test
 ```
 
 > If virtualenv isn’t active then use:
