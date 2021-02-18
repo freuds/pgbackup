@@ -34,4 +34,5 @@ install:
 
 ##  - make test : launch pytest on src directory
 test:
+		# pipenv install --dev pytest pytest-mock boto3
 		PYTHONPATH=./src pytest
