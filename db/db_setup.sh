@@ -1,6 +1,10 @@
 #!/bin/sh
 
 # Make sure docker is installed and is running
+if ! command -v "docker" >/dev/null 2>&1 ; then
+  echo "Docker is not installed !"
+  exit 1
+fi
 
 echo "Configure database user"
 read -r -p "Postgres user name: " name
