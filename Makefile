@@ -24,6 +24,16 @@ default: help
 help:
 		@cat $(MAKEFILE_LIST) | grep ^\#\# | grep -v ^\#\#\# |cut -c 4-
 
+# pip install --upgrade setuptools
+# Error: AttributeError: module 'pkg_resources' has no attribute 'iter_entry_points'
+
+##  - make install-db : Install docker postgres + inject sample table
+install-pipenv:
+		@pip install pipenv
+		@/usr/bin/pipenv shell
+		@/usr/bin/pipenv check
+		@exit
+
 ##  - make install-db : Install docker postgres + inject sample table
 install-db:
 		@./db/db_setup.sh
@@ -34,5 +44,5 @@ install:
 
 ##  - make test : launch pytest on src directory
 test:
-		# pipenv install --dev pytest pytest-mock boto3
+		# pipenv install --dev --user pytest pytest-mock boto3
 		PYTHONPATH=./src pytest
