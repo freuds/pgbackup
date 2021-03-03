@@ -86,4 +86,25 @@ Manual Testing
 
 ``>>> f.close()``
 
+Building wheel package
+----------------------
+
+Edit or Create this file
+``setup.cfg``
+
+Build the wheel
+``python setup.py bdist_wheel``
+
+Install package with wheel package
+``pip install dist/package_name.whl``
+
+Upload package on S3
+``
+>>> import boto3
+>>> client = boto3.client('s3')
+>>> f = open('dist/pgbackup-0.1.0-py37-none-any.whl', 'rb')
+>>> client.upload_fileobj(f, 'your-bucket-name', 'pgbackup-0.1.0-py37-none-any.whl')
+>>> exit()
+``
+
 This document is based on `reStructuredText <https://docutils.sourceforge.io>`_ tool.
