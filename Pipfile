@@ -5,10 +5,12 @@ name = "pypi"
 
 [packages]
 boto3 = "*"
+pytest = "*"
 
 [dev-packages]
 pytest = "*"
 pytest-mock = "*"
+boto3 = "*"
 
 [requires]
 python_version = "3.7"
