@@ -76,3 +76,14 @@ Manual Testing
 ``>>> f.write(proc.stdout.read())``
 
 ``>>> f.close()``
+
+Command
+=======
+
+```pipenv shell
+
+# install package
+pip install -e .
+
+# uninstall package
+pip uninstall pgbackup
