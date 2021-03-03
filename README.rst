@@ -4,7 +4,6 @@ pgbackup
 
 CLI for backing up remote PostgreSQL databases locally or to `AWS S3 <https://aws.amazon.com/fr/s3/>`_
 
-We use `reStructuredText <https://docutils.sourceforge.io>`_. with this specific markup format because there are tools in the Python ecosystem that can read this text and render documentation in a standardized way. 
 
 Preparing for Development
 =========================
@@ -36,6 +35,16 @@ Usage
 =====
 
 Pass in a full database URL, the storage driver, and destination.
+
+Install package on virtualenv
+-----------------------------
+
+``$ pip install -e .``
+
+Uninstall package
+-----------------
+
+``$ pip uninstall pgbackup``
 
 S3 Example w/ bucket name
 --------------------------
@@ -77,13 +86,4 @@ Manual Testing
 
 ``>>> f.close()``
 
-Command
-=======
-
-```pipenv shell
-
-# install package
-pip install -e .
-
-# uninstall package
-pip uninstall pgbackup
+This document is based on `reStructuredText <https://docutils.sourceforge.io>`_ tool.
